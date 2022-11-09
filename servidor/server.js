@@ -20,11 +20,10 @@ if (process.env.NODE_ENV !== "production") {
   let RedisStore = require("connect-redis")(session);
   const { createClient } = require("redis");
   const config = require("./utils/config");
+  // console.log("config", config);
   let redisClient = createClient({
     legacyMode: true,
-    host: config.host,
-    port: config.port,
-    password: config.password,
+    url: config.url
   });
   redisClient.connect().catch(console.error);
 

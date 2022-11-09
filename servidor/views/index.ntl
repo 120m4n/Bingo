@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBingo</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="confetti.js"></script>
+    <script src="card.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Bingo Pattern -->
+        <div class="parent">
+        #CARTON#
+        </div>
+        <!-- Bingo card id -->
+        <span class="card-id">
+            Carton #ID#
+        </span>    
+    </div>
+
+    <template id="my-card">
+        <style>
+            .card{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 0.8s ease;
+            }
+
+            .front{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                background: #fff;
+                color: #000;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                font-family:monospace;
+                font-size: xxx-large;
+            }
+
+            .back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                background: rgba(0, 0, 0, 0.666);
+                color: #fff;
+                transform: rotateY(180deg);
+                text-align: center;
+            }
+
+            .flipCard{
+                transform: rotateY(180deg);
+            }
+
+            .noBorder{
+                border: none;
+            }
+        </style>
+        <div class="card">
+            <div class="front noBorder">
+                <span><slot name="my-text">default</slot></span>
+            </div>
+                <div class="back noBorder">
+            </div>
+        </div>
+    </template>
+
+    <script src="main.js"></script>
+
+</body>
+</html>

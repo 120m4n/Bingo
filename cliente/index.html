@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBingo</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="card.js" defer></script>
+    <script src="eventos.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Bingo Pattern -->
+        <div class="parent">
+            <div class="div1" id="b">B</div>
+            <div class="div2" id="b_1"> </div>
+            <div class="div3" id="b_2">
+                <my-card><span slot="my-text">M</span></my-card>
+            </div>
+            <div class="div4" id="b_3"> </div>
+            <div class="div5" id="b_4"> </div>
+            <div class="div6" id="b_5"> </div>
+            <div class="div7" id="i">I </div>
+            <div class="div8" id="i_1"> </div>
+            <div class="div9" id="i_2"> </div>
+            <div class="div10" id="i33"> </div>
+            <div class="div11" id="i_4"> </div>
+            <div class="div12" id="i_5"> </div>
+            <div class="div13" id="n">N</div>
+            <div class="div14" id="n_1"> </div>
+            <div class="div15" id="n_2"> </div>
+            <div class="div16" id="n_3"> </div>
+            <div class="div17"  id="n_4"> </div>
+            <div class="div18" id="n_5"> </div>
+            <div class="div19" id="g">G </div>
+            <div class="div20" id="g_1"> </div>
+            <div class="div21" id="g_2"> </div>
+            <div class="div22" id="g_3"> </div>
+            <div class="div23" id="g_4"> </div>
+            <div class="div24" id="g_5"> </div>
+            <div class="div25" id="o">O </div>
+            <div class="div26" id="o_1"> </div>
+            <div class="div27" id="o_2"> </div>
+            <div class="div28" id="o_3"> </div>
+            <div class="div29" id="o_4"> </div>
+            <div class="div30" id="o_5"> </div>
+        </div>
+    </div>
+
+    <button>Click aqui</button>
+
+    <template id="my-card">
+        <style>
+            .card{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                transform-style: preserve-3d;
+                transition: all 0.8s ease;
+            }
+
+            .front{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                background: #ffc728;
+                color: #000;
+                text-align: center;
+            }
+
+            .back{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                backface-visibility: hidden;
+                background: rgba(0, 0, 0, 0.266);
+                color: #fff;
+                transform: rotateY(180deg);
+                text-align: center;
+            }
+
+            .flipCard{
+                transform: rotateY(180deg);
+            }
+
+            .noBorder{
+                border: none;
+            }
+        </style>
+        <div class="card">
+            <div class="front noBorder">
+                <span><slot name="my-text">default</slot></span>
+            </div>
+            <div class="back noBorder">
+            </div>
+        </div>
+    </template>
+
+    <script src="index.js"></script>
+
+</body>
+</html>

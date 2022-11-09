@@ -1,0 +1,24 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "prod": "cross-env NODE_ENV=production node index.js"
+  },
+  "author": "romansarmientogomez@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^7.6.2",
+    "connect-redis": "^6.1.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "redis": "^4.4.0"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.20"
+  }
+}

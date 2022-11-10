@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs"); // this engine requires the fs module
 const app = express();
+const morgan = require('morgan')
 const cartonesRouter = require("./routes/cartones.js");
 const port = 3000;
 
@@ -62,6 +63,7 @@ app.use(express.json());
 
 // Use the session middleware
 app.use(session(sess))
+app.use(morgan("combined"));
 
 app.get("/", (req, res) => {
   //   res.render("index", { value: "15", message: "Hello there!" });
